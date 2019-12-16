@@ -13,6 +13,9 @@
 		AB06405323A80A2A001F8F04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB06405123A80A2A001F8F04 /* Main.storyboard */; };
 		AB06405523A80A2D001F8F04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB06405423A80A2D001F8F04 /* Assets.xcassets */; };
 		AB06405823A80A2D001F8F04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB06405623A80A2D001F8F04 /* LaunchScreen.storyboard */; };
+		AB06406823A81595001F8F04 /* CalcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06406723A81595001F8F04 /* CalcButton.swift */; };
+		AB06406A23A817B3001F8F04 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06406923A817B3001F8F04 /* CalculatorViewController.swift */; };
+		AB06406E23A82966001F8F04 /* TipPercentSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB06406D23A82966001F8F04 /* TipPercentSegmentedControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		AB06405423A80A2D001F8F04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB06405723A80A2D001F8F04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB06405923A80A2D001F8F04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB06406723A81595001F8F04 /* CalcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcButton.swift; sourceTree = "<group>"; };
+		AB06406923A817B3001F8F04 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		AB06406D23A82966001F8F04 /* TipPercentSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPercentSegmentedControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,82 @@
 		AB06404A23A80A2A001F8F04 /* ALCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				AB06404B23A80A2A001F8F04 /* AppDelegate.swift */,
-				AB06404D23A80A2A001F8F04 /* SceneDelegate.swift */,
+				AB06406223A80B7B001F8F04 /* Controllers */,
+				AB06406123A80B77001F8F04 /* Views */,
+				AB06406023A80B60001F8F04 /* Models */,
+				AB06405F23A80B43001F8F04 /* Resources */,
 				AB06404F23A80A2A001F8F04 /* ViewController.swift */,
-				AB06405123A80A2A001F8F04 /* Main.storyboard */,
-				AB06405423A80A2D001F8F04 /* Assets.xcassets */,
-				AB06405623A80A2D001F8F04 /* LaunchScreen.storyboard */,
-				AB06405923A80A2D001F8F04 /* Info.plist */,
 			);
 			path = ALCalculator;
+			sourceTree = "<group>";
+		};
+		AB06405F23A80B43001F8F04 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB06404B23A80A2A001F8F04 /* AppDelegate.swift */,
+				AB06404D23A80A2A001F8F04 /* SceneDelegate.swift */,
+				AB06405423A80A2D001F8F04 /* Assets.xcassets */,
+				AB06405923A80A2D001F8F04 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AB06406023A80B60001F8F04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB06406123A80B77001F8F04 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB06406623A81574001F8F04 /* Custom Views */,
+				AB06406523A8156E001F8F04 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB06406223A80B7B001F8F04 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB06406423A80B9E001F8F04 /* Model Controllers */,
+				AB06406323A80B98001F8F04 /* View Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AB06406323A80B98001F8F04 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB06406923A817B3001F8F04 /* CalculatorViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AB06406423A80B9E001F8F04 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		AB06406523A8156E001F8F04 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AB06405123A80A2A001F8F04 /* Main.storyboard */,
+				AB06405623A80A2D001F8F04 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AB06406623A81574001F8F04 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB06406723A81595001F8F04 /* CalcButton.swift */,
+				AB06406D23A82966001F8F04 /* TipPercentSegmentedControl.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +211,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB06406E23A82966001F8F04 /* TipPercentSegmentedControl.swift in Sources */,
+				AB06406A23A817B3001F8F04 /* CalculatorViewController.swift in Sources */,
 				AB06405023A80A2A001F8F04 /* ViewController.swift in Sources */,
 				AB06404C23A80A2A001F8F04 /* AppDelegate.swift in Sources */,
+				AB06406823A81595001F8F04 /* CalcButton.swift in Sources */,
 				AB06404E23A80A2A001F8F04 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69Y2XBHVDM;
-				INFOPLIST_FILE = ALCalculator/Info.plist;
+				INFOPLIST_FILE = ALCalculator/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +380,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69Y2XBHVDM;
-				INFOPLIST_FILE = ALCalculator/Info.plist;
+				INFOPLIST_FILE = ALCalculator/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
