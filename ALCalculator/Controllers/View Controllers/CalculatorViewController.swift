@@ -65,6 +65,10 @@ class CalculatorViewController: UIViewController {
         totalToCalcLabel.text = "$\(totalBillString)"
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - Button Tap Methods
     @IBAction func tipButtonTapped(_ sender: UIButton) {
         calculateTip()
