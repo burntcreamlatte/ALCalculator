@@ -18,9 +18,23 @@ class CalcButton: UIButton {
     
     func setupUI() {
         self.backgroundColor = .systemBlue
-        //self.layer.borderWidth = 1
-        //self.layer.borderColor = UIColor.systemBlue.cgColor
-        self.layer.cornerRadius = 0.5 * self.bounds.size.width
+        self.layer.cornerRadius = 10
+      }
+
+}
+
+class ClearButton: UIButton {
+    
+    override func awakeFromNib() {
+      super.awakeFromNib()
+
+      setupUI()
+    }
+    
+    func setupUI() {
+        self.backgroundColor = .darkGray
+        self.setTitleColor(.systemBlue, for: .normal)
+        self.layer.cornerRadius = 10
       }
 
 }

@@ -11,23 +11,35 @@ import UIKit
 class CalculatorViewController: UIViewController {
 
     // MARK: - Properties
-    var tipPercent: Decimal = 0.1
+    var tipPercent: Double = 0.1
     var totalBillString: String = ""
-    var totalBillToCalculate: Decimal = 0.00
-    var tipTotal: Decimal = 0.00
+    var totalBillToCalculate: Double = 0.00
+    var tipTotal: Double = 0.00
     
     // MARK: - Outlets
     @IBOutlet weak var tipPercentSegmentedControl: TipPercentSegmentedControl!
     @IBOutlet weak var totalToCalcLabel: UILabel!
     @IBOutlet weak var tipThisMuchLabel: UILabel!
     
-    @IBOutlet weak var numberButton: UIButton!
+    @IBOutlet weak var nineButton: CalcButton!
+    @IBOutlet weak var eightButton: CalcButton!
+    @IBOutlet weak var sevenButton: CalcButton!
+    @IBOutlet weak var sixButton: CalcButton!
+    @IBOutlet weak var fiveButton: CalcButton!
+    @IBOutlet weak var fourButton: CalcButton!
+    @IBOutlet weak var threeButton: CalcButton!
+    @IBOutlet weak var twoButton: CalcButton!
+    @IBOutlet weak var oneButton: CalcButton!
+    @IBOutlet weak var zeroButton: CalcButton!
+    @IBOutlet weak var decimalButton: CalcButton!
+    @IBOutlet weak var clearButton: UIButton!
+    
     
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     // MARK: - Actions
@@ -40,21 +52,97 @@ class CalculatorViewController: UIViewController {
         default:
             break
         }
-        
     }
-    @IBAction func tipButtonTapped(_ sender: UIButton) {
-        tipThisMuchLabel.text = "$\(tipTotal)"
-        
-    }
-    
     
     // MARK: - Calculation Methods
-    @IBAction func numberTapped(_ sender: CalcButton) {
-        totalBillString.last = self.numberButton.titleLabel!.text
-        
+    func calculateTip() {
+        guard let totalBillDecimal = Double(totalBillString) else { return }
+        tipTotal = totalBillDecimal * tipPercent
     }
     
+    // MARK: - Helper Methods
+    func updateBill() {
+        totalToCalcLabel.text = "$\(totalBillString)"
+    }
     
+    // MARK: - Button Tap Methods
+    @IBAction func tipButtonTapped(_ sender: UIButton) {
+        calculateTip()
+        updateBill()
+        tipThisMuchLabel.text = "$\(tipTotal)"
+    }
     
+    @IBAction func clearButtonTapped(_ sender: Any) {
+        totalBillString = ""
+        
+        totalToCalcLabel.text = "$0"
+        tipThisMuchLabel.text = "$0"
+    }
     
+    @IBAction func nineTapped(_ sender: Any) {
+        if let number = nineButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
+    @IBAction func eightTapped(_ sender: Any) {
+        if let number = eightButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
+    @IBAction func sevenTapped(_ sender: Any) {
+        if let number = sevenButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
+    @IBAction func sixTapped(_ sender: Any) {
+        if let number = sixButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
+    @IBAction func fiveTapped(_ sender: Any) {
+        if let number = fiveButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
+    @IBAction func fourTapped(_ sender: Any) {
+        if let number = fourButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
+    @IBAction func threeTapped(_ sender: Any) {
+        if let number = threeButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
+    @IBAction func twoTapped(_ sender: Any) {
+        if let number = twoButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
+    @IBAction func oneTapped(_ sender: Any) {
+        if let number = oneButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
+    @IBAction func zeroTapped(_ sender: Any) {
+        if let number = zeroButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
+    @IBAction func decimalTapped(_ sender: Any) {
+        if let number = decimalButton.titleLabel?.text {
+            totalBillString.insert(number.first!, at: totalBillString.endIndex)
+            updateBill()
+        }
+    }
 }
